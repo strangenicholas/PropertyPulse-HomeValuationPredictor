@@ -87,3 +87,4 @@ predict_button.grid(row=10, columnspan=2)
 
 # Run the tkinter event loop
 window.mainloop()
+
