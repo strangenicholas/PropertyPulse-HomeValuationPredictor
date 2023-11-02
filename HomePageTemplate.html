@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home Page</title>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Our Web App</h1>
+        <p>Discover amazing homes and get instant price estimates.</p>
+    </header>
+    <nav>
+        <a href="/features">Learn More</a>
+    </nav>
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feature Selection</title>
+    <script>
+        function validateForm() {
+            // Get input values
+            var overallQuality = document.getElementById("overallQuality").value;
+            var aboveGroundArea = document.getElementById("aboveGroundArea").value;
+            var garageCapacity = document.getElementById("garageCapacity").value;
+            var garageArea = document.getElementById("garageArea").value;
+            var basementArea = document.getElementById("basementArea").value;
+            var firstFloorArea = document.getElementById("firstFloorArea").value;
+            var fullBaths = document.getElementById("fullBaths").value;
+            var aboveGroundRooms = document.getElementById("aboveGroundRooms").value;
+            var yearBuilt = document.getElementById("yearBuilt").value;
+            var yearRemodeled = document.getElementById("yearRemodeled").value;
+
+            // Perform basic input validation (you can add more checks)
+            if (
+                isNaN(overallQuality) || isNaN(aboveGroundArea) || isNaN(garageCapacity) ||
+                isNaN(garageArea) || isNaN(basementArea) || isNaN(firstFloorArea) ||
+                isNaN(fullBaths) || isNaN(aboveGroundRooms) || isNaN(yearBuilt) || isNaN(yearRemodeled)
+            ) {
+                alert("Please enter valid numerical values for all fields.");
+                return false;
+            }
+
+            // Continue with form submission or processing
+            // You can send this data to your server for further processing.
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h1>Feature Selection</h1>
+    <form onsubmit="return validateForm()">
+        <label for="overallQuality">Overall Quality (1-10):</label>
+        <input type="text" id="overallQuality" name="overallQuality"><br>
+
+        <label for="aboveGroundArea">Above Ground Square Footage:</label>
+        <input type="text" id="aboveGroundArea" name="aboveGroundArea"><br>
+
+        <label for="garageCapacity">Garage Car Capacity:</label>
+        <input type="text" id="garageCapacity" name="garageCapacity"><br>
+
+        <label for="garageArea">Garage Square Footage:</label>
+        <input type="text" id="garageArea" name="garageArea"><br>
+
+        <label for="basementArea">Basement Square Footage:</label>
+        <input type="text" id="basementArea" name="basementArea"><br>
+
+        <label for="firstFloorArea">First Floor Square Footage:</label>
+        <input type="text" id="firstFloorArea" name="firstFloorArea"><br>
+
+        <label for="fullBaths">Number of Full Baths:</label>
+        <input type="text" id="fullBaths" name="fullBaths"><br>
+
+        <label for="aboveGroundRooms">Number of Above Ground Rooms:</label>
+        <input type="text" id="aboveGroundRooms" name="aboveGroundRooms"><br>
+
+        <label for="yearBuilt">Year Built:</label>
+        <input type="text" id="yearBuilt" name="yearBuilt"><br>
+
+        <label for="yearRemodeled">Year Remodeled:</label>
+        <input type="text" id="yearRemodeled" name="yearRemodeled"><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
