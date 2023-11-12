@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class HomevaluationsConfig(AppConfig):
+class ValuepredictionAppConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'homevaluations'
+    name = 'valueprediction_app'
