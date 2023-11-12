@@ -1,12 +1,12 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .forms import HouseDataForm
+from valueprediction_app.forms import HouseDataForm
 import pickle
 import numpy as np
 import os
 
 # Get the absolute path to the xgboost model
-model_path = os.path.abspath('C:\Users\nicho\FullStackCOP5818\COP5818_FullStack_Project\xgboost_model.pkl')
+model_path = os.path.abspath(r'C:\Users\nicho\FullStackCOP5818\COP5818_FullStack_Project\xgboost_model.pkl')
 
 # Load the XGBoost model
 with open(model_path, 'rb') as file:
