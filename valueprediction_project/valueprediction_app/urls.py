@@ -6,7 +6,7 @@ from . import views
 # ]
 
 urlpatterns = [
-    path('', views.default_view, name='default'),  # Define a view for the empty string path
+    path('', views.predict_price, name='default'),  # Define a view for the empty string path
     path('predict/', views.predict_price, name='predict_price'),
     # Add more URL patterns specific to your app's views
 ]
