@@ -1,16 +1,16 @@
 from django.db import models
 
 class HouseData(models.Model):
-    overall_quality = models.IntegerField()
-    gr_liv_area = models.IntegerField()
-    garage_cars = models.IntegerField()
-    garage_area = models.IntegerField()
-    total_bsmt_sf = models.IntegerField()
-    first_flr_sf = models.IntegerField()
-    full_bath = models.IntegerField()
-    tot_rms_abv_grd = models.IntegerField()
-    year_built = models.IntegerField()
-    year_remod_add = models.IntegerField()
+    Overall_Quality = models.IntegerField()
+    Ground_Living_Sqft = models.IntegerField()
+    Garage_Car_Capacity = models.IntegerField()
+    Garage_Sqft = models.IntegerField()
+    Basement_Sqft = models.IntegerField()
+    First_Floor_Sqft = models.IntegerField()
+    Full_Baths = models.IntegerField()
+    Bedroom_Count = models.IntegerField()
+    Year_Built = models.IntegerField()
+    Year_Remodeled = models.IntegerField()
 
     def __str__(self):
-        return f"{self.overall_quality}, {self.gr_liv_area}, {self.garage_cars}, {self.garage_area}, {self.total_bsmt_sf}, {self.first_flr_sf}, {self.full_bath}, {self.tot_rms_abv_grd}, {self.year_built}, {self.year_remod_add}"
+        return f"{self.Overall_Quality}, {self.Ground_Living_Sqft}, {self.Garage_Car_Capacity},{self.Garage_Car_Capacity}, {self.Basement_Sqft}, {self.First_Floor_Sqft}, {self.Full_Baths},{self.Bedroom_Count}, {self.Year_Built}, {self.Year_Remodeled}"
