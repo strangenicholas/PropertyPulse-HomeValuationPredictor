@@ -1,5 +1,33 @@
-<form method="post">
+<!-- <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Predict</button>
-</form>
+</form> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to the Home Valuation Predictor</title>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Home Valuation Predictor! 💰🏡</h1>
+    </header>
+    <main>
+        </section>
+        <section>
+            <h2>Please enter the features of your home below:</h2>
+            <h3> 
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit">Predict</button>
+                </form> 
+            </h3>
+        </section>
+    </main>
+    <footer>
+        <p></p>
+    </footer>
+</body>
+</html>
