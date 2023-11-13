@@ -1,0 +1,14 @@
+# Byte-compiled / optimized Python files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment-specific files and directories
+myenv/
+.env
+
+# Ignore other generated files and directories
+.vscode/
+.idea/
+.DS_Store
