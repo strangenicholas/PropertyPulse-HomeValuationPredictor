@@ -20,7 +20,7 @@ def predict_price(request):
             features = [data['overall_quality'], data['gr_liv_area'], data['garage_cars'], data['garage_area'], data['total_bsmt_sf'], data['first_flr_sf'], data['full_bath'], data['tot_rms_abv_grd'], data['year_built'], data['year_remod_add']]
             X_test = np.array(features).reshape(1, -1)
             y_pred = model.predict(X_test)
-            return render(request, 'prediction_app/result.html', {'predicted_price': y_pred[0]})
+            return render(request, 'result.html', {'predicted_price': y_pred[0]})
     else:
         form = HouseDataForm()
-    return render(request, 'prediction_app/predict.html', {'form': form})
+    return render(request, 'predict.html', {'form': form})
