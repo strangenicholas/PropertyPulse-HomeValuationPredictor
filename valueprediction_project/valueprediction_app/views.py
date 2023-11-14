@@ -8,6 +8,9 @@ import os
 # Get the absolute path to the xgboost model
 model_path = os.path.abspath(r'C:\Users\nicho\FullStackCOP5818\COP5818_FullStack_Project\xgboost_model.pkl')
 
+def login_view(request):
+    return render(request, 'login.html') 
+    
 # Load the XGBoost model
 with open(model_path, 'rb') as file:
     model = pickle.load(file)
