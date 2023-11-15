@@ -1,4 +1,40 @@
 <!-- login.html -->
 
-<h2>Login</h2>
-<a href="{% url 'social:begin' 'google-oauth2' %}">Login with Google</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin: 50px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        .login-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            text-decoration: none;
+            background-color: #4285f4; 
+            color: #fff;
+            border-radius: 5px;
+        }
+
+        .login-btn:hover {
+            background-color: #357ae8; 
+        }
+    </style>
+</head>
+<body>
+    <h2>Login</h2>
+    <a href="{% url 'social:begin' 'google-oauth2' %}" class="login-btn">Login with Google</a>
+</body>
+</html>
