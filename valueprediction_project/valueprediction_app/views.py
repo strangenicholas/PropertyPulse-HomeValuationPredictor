@@ -15,6 +15,9 @@ def login_view(request):
 with open(model_path, 'rb') as file:
     model = pickle.load(file)
 
+def login_view(request):
+    return render(request, 'login.html')    
+
 def predict_price(request):
     if request.method == 'POST':
         form = HouseDataForm(request.POST)
