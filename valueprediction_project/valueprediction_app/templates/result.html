@@ -1,6 +1,3 @@
-<!-- <p>The predicted house price is ${{ predicted_price|floatformat:2 }}</p> -->
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,18 +14,15 @@
             padding: 0;
             box-sizing: border-box;
         }
-
         header {
             background-color: #007bff;
             color: white;
             text-align: center;
             padding: 10px 0;
         }
-
         header h1 {
             margin: 0;
         }
-
         main {
             width: 80%;
             max-width: 800px;
@@ -38,34 +32,28 @@
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-
         section h2 {
             color: #007bff;
         }
-
         form {
             display: flex;
             flex-direction: column;
         }
-
         input, button {
             padding: 10px;
             margin-top: 10px;
             border-radius: 4px;
             border: 1px solid #ddd;
         }
-
         button {
             background-color: #28a745;
             color: white;
             border: none;
             cursor: pointer;
         }
-
         button:hover {
             background-color: #218838;
         }
-
         footer {
             text-align: center;
             padding: 10px 0;
@@ -73,6 +61,7 @@
             color: white;
         }
     </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
     <header>
@@ -85,13 +74,38 @@
             <h3>${{ predicted_price|floatformat:2 }}</h3>
         <p>Compare with similar homes on <a href="https://www.zillow.com/" target="_blank">Zillow</a>.</p>
         </section>
-        
+        <section id="mortgage-info-section">
+            <h2>Mortgage Information</h2>
+            <p id="mortgage-info">Loading mortgage data...</p>
+        </section>
+
     </main>
-    
+
     <footer>
     <p>Would you like to receive a cash offer? Email us at <a href="mailto:homevaluepredictor@gmail.com">homevaluepredictor@gmail.com</a> or call us at (407) 456-7890</p>
     <p>© 2023 Home Valuation Predictor. All rights reserved.</p>
     </footer>
+
+     <script>
+        $(document).ready(function() {
+            const settings = {
+                async: true,
+                crossDomain: true,
+                url: 'https://mortgage-monthly-payment-calculator.p.rapidapi.com/revotek-finance/mortgage/monthly-payment?loanAmount=300000&interestRate=0.05&terms=360',
+                method: 'GET',
+                headers: {
+                    'X-RapidAPI-Key': '68773e55f3mshb642b44372f1bdfp1e0ce0jsnef0f235a28f3',
+                    'X-RapidAPI-Host': 'mortgage-monthly-payment-calculator.p.rapidapi.com'
+                }
+            };
+
+            $.ajax(settings).done(function (response) {
+                console.log(response);
+                // Update the text of the mortgage-info paragraph with the response
+                $('#mortgage-info').text('Mortgage data: ' + JSON.stringify(response));
+            });
+        });
+    </script>
 
 </body>
 </html>
